@@ -14,7 +14,13 @@ const addRemote = async (a, b) => new Promise(resolve => {
 
 ```javascript
 async function add(...args) {
- // 你的实现
+ let count = 0;
+    for (let i = 0; i < args.length; i++) {
+        const item = args[i];
+        count = await addRemote(count,item);
+        
+    }
+    return count;
 }
 ```
 // 请⽤示例验证运⾏结果:
